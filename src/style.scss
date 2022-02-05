@@ -1,0 +1,55 @@
+.App{
+    background-color:rgb(185, 150, 96);
+    width: 30%;
+    margin: 0 auto;
+}
+.head{
+    h1,h2{
+        text-align: center;
+    }
+    h1{
+        text-transform: uppercase ;
+    }
+}
+.inputComponent{
+    width: 100%;
+    padding: 20px 0;
+    form{
+        width: 87%;
+        margin: 0 auto;
+        input{
+            width:80%;
+            height: 30px;
+        }
+        button{
+            height: 35px;
+            margin-left:3%;
+            cursor: pointer;
+        }
+      
+    }
+}
+.tasks{
+    padding-bottom: 20px;
+    font-size: 20px;
+    p{
+        width: 90%;
+        height: 40px;
+        border: 1px solid black;
+        margin: 10px auto;
+        display: flex;
+        background-color:#804c46;
+        justify-content: space-around;
+        vertical-align: middle;
+        color:whitesmoke;
+        button{
+            width: 30px;
+            height: 30px;
+            margin:5px 0 0;
+            cursor:pointer;
+        }
+    }
+}
+button:hover{
+    box-shadow: 0 0 40px 40px #e74c3c inset;
+} 

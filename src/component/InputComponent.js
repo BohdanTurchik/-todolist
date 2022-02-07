@@ -6,14 +6,16 @@ class InputComponent extends React.Component {
         super(props);
         this.handleAddToDo=this.handleAddToDo.bind(this);
     }
+    
     state = {
         value: "",
         id:"",
         isDone: false
      }
+
      handleInput(e){
          const input = e.target.value;
-         this.setState(state=>{state.value=input})
+         this.setState({value:input})
      }
    
      handleAddToDo(e){
@@ -26,15 +28,15 @@ class InputComponent extends React.Component {
              });
              this.setState({value: ""})
          }
-         
      }
+
     render() { 
         return (
             <div className="inputComponent">
                 <form onSubmit={this.handleAddToDo}>
                     <input
                         type="text"
-                        
+                        value={this.state.value}
                         onChange={this.handleInput.bind(this)}
                     />
                     <button >Send</button>

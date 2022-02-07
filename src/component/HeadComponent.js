@@ -11,28 +11,29 @@ class HeadComponent extends React.Component {
     state = {
         tasks:[]
       }
+    
       handleAddToDo(value){
-          
           this.setState({
             tasks:this.state.tasks.concat(value)
           })
       }
-    handleChange(){ 
-        this.setState({
-            isDone:true
-        })
-        console.log(this.state.tasks) 
-    }
-    deleteToDo(id){
+    
+      deleteToDo(id){
+        let arr=this.state.tasks.filter(item => item.id !== id)
       this.setState({
-          tasks:this.state.tasks.filter(item => item.id !== id)
+          tasks:arr
       })
+      console.log(this.state)
     }
+    
     handleChange(id){
+        let arr = this.state.tasks
+        arr.map(item =>item.id === id ? item.isDone=true :null)
         this.setState({
-            tasks: this.state.tasks.filter(item =>item.id ===id ? item.isDone=true : null)
+            tasks:arr 
         })
     }
+    
     render(){ 
         return (
             <div className="head">
@@ -46,8 +47,7 @@ class HeadComponent extends React.Component {
                      click={this.handleChange}
                      delete={this.deleteToDo.bind(this)}/> 
                 </div>
-            </div>
-        
+            </div>    
           );
     }
 }

@@ -8,9 +8,11 @@ class Task extends React.Component {
         return (
             <div className="tasks">
                 {this.props.list.map( item => <p key={item.id}>{item.value}
-                <button>{ !item.isDone ? <FontAwesomeIcon icon={faCheckCircle} onClick={()=>this.props.click(item.id)}/>
-                :<FontAwesomeIcon icon={faTrash} onClick={()=> this.props.delete(item.id)} />}</button></p>)}
-                
+                {!item.isDone
+                ?<button onClick={()=>this.props.click(item.id)}><FontAwesomeIcon icon={faCheckCircle}/></button>
+                :<button  onClick={()=>this.props.delete(item.id)}><FontAwesomeIcon icon={faTrash}/></button>
+                 }
+                 </p>)}
             </div>
           );
     }
